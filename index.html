@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Freedom | Social media UI prototype</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Freedom</p>
+        <h1>Social media prototype</h1>
+      </div>
+      <nav class="filters" aria-label="screen filter navigation">
+        <button class="filter active" data-filter="all">সব</button>
+        <button class="filter" data-filter="mobile">মোবাইল</button>
+        <button class="filter" data-filter="desktop">ডেস্কটপ</button>
+      </nav>
+    </header>
+
+    <main class="screen-grid">
+      <section class="screen-card" data-category="mobile">
+        <div class="screen-header">Share Sheet</div>
+        <div class="phone">
+          <div class="statusbar">9:41</div>
+          <div class="sheet">
+            <h3>শেয়ার করুন</h3>
+            <div class="share-row"><span>⤴</span><span>আপনার ফিডে শেয়ার</span></div>
+            <div class="share-row"><span>✉</span><span>মেসেজে পাঠান</span></div>
+            <div class="share-row"><span>⧉</span><span>লিংক কপি করুন</span></div>
+            <div class="share-row"><span>🔖</span><span>পোস্ট সংরক্ষণ করুন</span></div>
+            <button class="btn btn-outline">বাতিল</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen-card" data-category="mobile">
+        <div class="screen-header">Saved</div>
+        <div class="phone">
+          <div class="topbar-row">
+            <span>←</span>
+            <strong>সংরক্ষিত পোস্ট</strong>
+            <span> </span>
+          </div>
+          <div class="post-card">
+            <div class="post-head"><div class="avatar small"></div><div><strong>সাদিয়া</strong><small>১২ মিনিট আগে</small></div><span>🔖</span></div>
+            <p>ঢাকায় বিকেলের কফি, নতুন জায়গা খুঁজছি...</p>
+            <div class="photo-strip one"></div>
+            <div class="metric-row"><span>♡ ৩৪৮</span><span>💬 ২৪</span><span>↻ ৮</span></div>
+          </div>
+          <div class="post-card">
+            <div class="post-head"><div class="avatar small alt"></div><div><strong>ইশতিয়াক</strong><small>১ দিন আগে</small></div><span>🔖</span></div>
+            <p>প্রিয় খাবার বেছে নিতে গিয়ে শিখলাম...</p>
+            <div class="photo-strip two"></div>
+            <div class="metric-row"><span>♡ ৫৬০</span><span>💬 ১৮</span><span>↻ ১২</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen-card" data-category="mobile">
+        <div class="screen-header">Search Results</div>
+        <div class="phone">
+          <div class="searchbar">ঢাকা</div>
+          <div class="chip-row"><span class="chip">মানুষ</span><span class="chip">পোস্ট</span><span class="chip active">পেজ</span></div>
+          <div class="result-row"><div class="avatar"></div><div><strong>নাহিদ রহমান</strong><small>@nahid</small></div><button class="mini-btn">ফলো করুন</button></div>
+          <div class="result-row"><div class="avatar alt"></div><div><strong>সাবিহা আক্তার</strong><small>@sabiha</small></div><button class="mini-btn">ফলো করুন</button></div>
+          <div class="post-card compact">
+            <div class="post-head"><div class="avatar small"></div><div><strong>ফুফু রেস্তোরাঁ</strong><small>@foodcorner</small></div></div>
+            <p>ঢাকায় নতুন বাঙালি খাবারের স্বাদ...</p>
+            <div class="photo-strip one"></div>
+          </div>
+          <div class="post-card compact">
+            <div class="post-head"><div class="avatar small alt"></div><div><strong>সৌমিক</strong><small>@soumik</small></div></div>
+            <p>সকাল ৬টায় সোনারগাঁও ঘুরে এলাম...</p>
+            <div class="photo-strip two"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen-card" data-category="mobile">
+        <div class="screen-header">Photos</div>
+        <div class="phone">
+          <div class="profile-mini">
+            <div class="avatar large"></div>
+            <div>
+              <strong>রহিম আহমেদ</strong>
+            </div>
+          </div>
+          <div class="tabs"><span>পোস্ট</span><span class="active">ছবি</span></div>
+          <div class="photo-grid">
+            <div class="mini-photo"></div><div class="mini-photo b"></div><div class="mini-photo c"></div>
+            <div class="mini-photo d"></div><div class="mini-photo e"></div><div class="mini-photo f"></div>
+            <div class="mini-photo g"></div><div class="mini-photo h"></div><div class="mini-photo i"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen-card" data-category="mobile">
+        <div class="screen-header">Interests</div>
+        <div class="phone">
+          <h3>আপনার আগ্রহ বাছুন</h3>
+          <p class="subtle">কমপক্ষে ৩টি বাছুন</p>
+          <div class="interest-grid">
+            <span>সংবাদ</span><span>খেলা</span><span>শিক্ষা</span>
+            <span>প্রযুক্তি</span><span>বিনোদন</span><span>ব্যবসা</span>
+            <span>ভ্রমণ</span><span>রান্না</span><span>সাহিত্য</span>
+          </div>
+          <button class="btn primary">পরবর্তী</button>
+        </div>
+      </section>
+
+      <section class="screen-card" data-category="mobile">
+        <div class="screen-header">Suggested Follows</div>
+        <div class="phone">
+          <h3>যাদের ফলো করতে পারেন</h3>
+          <div class="result-row"><div class="avatar"></div><div><strong>নাঈম</strong><small>@naim</small></div><button class="mini-btn">ফলো করুন</button></div>
+          <div class="result-row"><div class="avatar alt"></div><div><strong>মৌসুমী</strong><small>@mausumi</small></div><button class="mini-btn">ফলো করুন</button></div>
+          <div class="result-row"><div class="avatar another"></div><div><strong>রাশেদ</strong><small>@rashed</small></div><button class="mini-btn">ফলো করুন</button></div>
+          <div class="result-row"><div class="avatar gold"></div><div><strong>সামিয়া</strong><small>@samiya</small></div><button class="mini-btn">ফলো করুন</button></div>
+          <div class="result-row"><div class="avatar dark"></div><div><strong>তামিম</strong><small>@tamim</small></div><button class="mini-btn">ফলো করুন</button></div>
+          <button class="btn primary">শেষ করুন</button>
+          <a class="link">এড়িয়ে যান</a>
+        </div>
+      </section>
+
+      <section class="screen-card" data-category="mobile">
+        <div class="screen-header">Page Profile</div>
+        <div class="phone">
+          <div class="cover-photo"></div>
+          <div class="page-profile">
+            <div class="page-logo"></div>
+            <div class="badge gold">✓</div>
+            <h3>বাংলা ফুড কর্নার</h3>
+            <p class="subtle">রেস্তোরাঁ</p>
+            <div class="stats"><span>অনুসারী ১৮.৫K</span><span>পোস্ট ১১২</span></div>
+            <div class="split-btns"><button class="btn primary">ফলো করুন</button><button class="btn btn-outline">মেসেজ</button></div>
+            <div class="tabs small-tabs"><span>পোস্ট</span><span>পরিচিতি</span></div>
+            <div class="post-card compact"><p>আজকের স্পেশাল ডিশ: সাদা ভাত + ডাবের ঝোল...</p></div>
+            <div class="post-card compact"><p>ঢাকায় সর্বশেষ ফেস্টিভ্যাল খাবার নিয়ে আলোচনা...</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen-card" data-category="mobile">
+        <div class="screen-header">Create Page</div>
+        <div class="phone">
+          <h3>পেজ তৈরি করুন</h3>
+          <label>পেজের নাম <input placeholder="পেজের নাম" /></label>
+          <label>ধরন <select><option>ধরন</option></select></label>
+          <label>সংক্ষিপ্ত পরিচয় <textarea placeholder="সংক্ষিপ্ত পরিচয়"></textarea></label>
+          <div class="upload-box">লোগো দিন</div>
+          <div class="upload-box">কভার ছবি</div>
+          <button class="btn primary">পেজ তৈরি করুন</button>
+        </div>
+      </section>
+
+      <section class="screen-card" data-category="mobile">
+        <div class="screen-header">Badge Types</div>
+        <div class="phone">
+          <h3>ভেরিফাইড ব্যাজ</h3>
+          <div class="badge-card blue"><div class="mini-badge blue">✓</div><strong>প্রিমিয়াম সদস্য</strong><p>বিশেষ সুবিধা ও এক্সক্লুসিভ কনটেন্ট</p></div>
+          <div class="badge-card gold"><div class="mini-badge gold">✓</div><strong>প্রতিষ্ঠান/ব্যবসা</strong><p>বিশ্বাসযোগ্য ব্র্যান্ড ও পেজ</p></div>
+          <div class="badge-card grey"><div class="mini-badge grey">✓</div><strong>সরকারি প্রতিষ্ঠান</strong><p>অফিশিয়াল পরিচয়</p></div>
+          <button class="btn primary">আবেদন করুন</button>
+        </div>
+      </section>
+
+      <section class="screen-card" data-category="mobile">
+        <div class="screen-header">My Premium</div>
+        <div class="phone">
+          <h3>আমার প্রিমিয়াম</h3>
+          <div class="premium-card">
+            <div class="mini-badge blue">✓</div>
+            <div>
+              <strong>সক্রিয়</strong>
+              <p>বার্ষিক</p>
+              <small>মেয়াদ শেষ: ২০ ডিসেম্বর ২০২৬</small>
+            </div>
+          </div>
+          <button class="btn primary">নবায়ন করুন</button>
+          <button class="btn btn-outline">পেমেন্টের ইতিহাস</button>
+        </div>
+      </section>
+
+      <section class="screen-card" data-category="mobile">
+        <div class="screen-header">Payment History</div>
+        <div class="phone">
+          <h3>পেমেন্টের ইতিহাস</h3>
+          <div class="table-row"><span>১২ জানু</span><span>বার্ষিক</span><span>৳ ১,৮০০</span><span>NPSB</span><span class="success">সফল</span></div>
+          <div class="table-row"><span>৮ জানু</span><span>মাসিক</span><span>৳ ২,১০০</span><span>NPSB</span><span class="fail">ব্যর্থ</span></div>
+          <div class="table-row"><span>২৮ ডিসেম্বর</span><span>বার্ষিক</span><span>৳ ১,৬০০</span><span>NPSB</span><span class="success">সফল</span></div>
+          <div class="table-row"><span>১৬ ডিসেম্বর</span><span>মাসিক</span><span>৳ ১,২০০</span><span>NPSB</span><span class="success">সফল</span></div>
+        </div>
+      </section>
+
+      <section class="screen-card" data-category="mobile">
+        <div class="screen-header">New Message</div>
+        <div class="phone">
+          <div class="topbar-row"><span>←</span><strong>নতুন মেসেজ</strong><span></span></div>
+          <div class="searchbar small">খুঁজুন</div>
+          <div class="result-row"><div class="avatar"></div><div><strong>ফারহানা</strong><small>@farhana</small></div></div>
+          <div class="result-row"><div class="avatar alt"></div><div><strong>ইমরান</strong><small>@imran</small></div></div>
+          <div class="result-row"><div class="avatar another"></div><div><strong>রিতা</strong><small>@rita</small></div></div>
+          <div class="result-row"><div class="avatar gold"></div><div><strong>আদনান</strong><small>@adnan</small></div></div>
+          <div class="result-row"><div class="avatar dark"></div><div><strong>নুসরাত</strong><small>@nusrat</small></div></div>
+          <div class="result-row"><div class="avatar"></div><div><strong>জুবায়ের</strong><small>@zubayer</small></div></div>
+        </div>
+      </section>
+
+      <section class="screen-card" data-category="mobile">
+        <div class="screen-header">Chat Image</div>
+        <div class="phone">
+          <div class="topbar-row"><span>←</span><div class="avatar mini"></div><strong>সুমি আক্তার</strong><span>📸</span></div>
+          <div class="bubble incoming"><div class="mini-photo large-bubble"></div></div>
+          <div class="bubble incoming">হ্যালো! আজকের ছবি দেখে নিন।</div>
+          <div class="bubble outgoing">ভালোই লাগছে, তোমার বাগানটা অসাধারণ।</div>
+          <div class="composer"><span>🖼️</span><input placeholder="মেসেজ লিখুন" /><span>➤</span></div>
+        </div>
+      </section>
+
+      <section class="screen-card" data-category="desktop">
+        <div class="screen-header">Admin Users</div>
+        <div class="desktop-window admin-window">
+          <aside class="sidebar">
+            <div class="brand-box">Booeb</div>
+            <div class="side-link active">ড্যাশবোর্ড</div>
+            <div class="side-link">ব্যবহারকারী</div>
+            <div class="side-link">পোস্ট</div>
+            <div class="side-link">রিপোর্ট</div>
+            <div class="side-link">ভেরিফিকেশন আবেদন</div>
+            <div class="side-link">পেমেন্ট</div>
+          </aside>
+          <main class="admin-main">
+            <div class="searchbar darkbar">খুঁজুন</div>
+            <table>
+              <tr><th>নাম</th><th>ইউজারনেম</th><th>ব্যাজ</th><th>যোগদান</th><th>অবস্থা</th><th>অ্যাকশন</th></tr>
+              <tr><td>সামিয়া</td><td>@samiya</td><td>✓</td><td>১ বছর</td><td>সক্রিয়</td><td><button>দেখুন</button><button>স্থগিত করুন</button></td></tr>
+              <tr><td>নাঈম</td><td>@naim</td><td>—</td><td>৯ মাস</td><td>সক্রিয়</td><td><button>দেখুন</button><button>স্থগিত করুন</button></td></tr>
+            </table>
+          </main>
+        </div>
+      </section>
+
+      <section class="screen-card" data-category="desktop">
+        <div class="screen-header">Admin Reports</div>
+        <div class="desktop-window admin-window">
+          <aside class="sidebar">
+            <div class="brand-box">Booeb</div>
+            <div class="side-link">ড্যাশবোর্ড</div>
+            <div class="side-link">ব্যবহারকারী</div>
+            <div class="side-link">পোস্ট</div>
+            <div class="side-link active">রিপোর্ট</div>
+            <div class="side-link">ভেরিফিকেশন আবেদন</div>
+            <div class="side-link">পেমেন্ট</div>
+          </aside>
+          <main class="admin-main">
+            <table>
+              <tr><th>পোস্ট</th><th>কারণ</th><th>রিপোর্টকারী</th><th>তারিখ</th><th>অ্যাকশন</th></tr>
+              <tr><td>ছবির পোস্ট</td><td>ভুয়া তথ্য</td><td>@hasan</td><td>১২ জানু</td><td><button>সরিয়ে দিন</button><button>বাতিল</button></td></tr>
+              <tr><td>ভিডিও</td><td>স্প্যাম</td><td>@mita</td><td>২৮ জানু</td><td><button>সরিয়ে দিন</button><button>বাতিল</button></td></tr>
+            </table>
+          </main>
+        </div>
+      </section>
+
+      <section class="screen-card" data-category="desktop">
+        <div class="screen-header">Admin Payments</div>
+        <div class="desktop-window admin-window">
+          <aside class="sidebar">
+            <div class="brand-box">Booeb</div>
+            <div class="side-link">ড্যাশবোর্ড</div>
+            <div class="side-link">ব্যবহারকারী</div>
+            <div class="side-link">পোস্ট</div>
+            <div class="side-link">রিপোর্ট</div>
+            <div class="side-link">ভেরিফিকেশন আবেদন</div>
+            <div class="side-link active">পেমেন্ট</div>
+          </aside>
+          <main class="admin-main">
+            <div class="stats-row">
+              <div class="metric-card"><span>আজকের পেমেন্ট</span><strong>৳ ১,২৮০</strong></div>
+              <div class="metric-card"><span>এই মাসে</span><strong>৳ ৪৮,৯৫০</strong></div>
+              <div class="metric-card"><span>ব্যর্থ</span><strong>১২ টি</strong></div>
+            </div>
+            <table>
+              <tr><th>ব্যবহারকারী</th><th>প্ল্যান</th><th>পরিমাণ</th><th>মাধ্যম</th><th>অবস্থা</th><th>তারিখ</th></tr>
+              <tr><td>সুজা</td><td>বার্ষিক</td><td>৳ ১,৮০০</td><td>NPSB</td><td class="success">সফল</td><td>১২ জানু</td></tr>
+              <tr><td>তারেক</td><td>মাসিক</td><td>৳ ৮০০</td><td>NPSB</td><td class="fail">ব্যর্থ</td><td>২৮ জানু</td></tr>
+            </table>
+          </main>
+        </div>
+      </section>
+
+      <section class="screen-card" data-category="desktop">
+        <div class="screen-header">Desktop Landing</div>
+        <div class="desktop-window web-landing">
+          <nav class="web-nav">
+            <div class="logo-box">Booeb</div>
+            <div class="nav-links"><span>আমাদের সম্পর্কে</span><span>যোগাযোগ</span></div>
+            <div class="nav-actions"><button class="web-btn">লগইন</button><button class="web-btn filled">যোগ দিন</button></div>
+          </nav>
+          <div class="hero-row">
+            <div class="hero-left">
+              <h1>বাংলাদেশের সবার জন্য</h1>
+              <p>আপনার কথা, আপনার ভাষায়</p>
+              <button class="btn primary wide">যোগ দিন</button>
+            </div>
+            <div class="hero-right">
+              <div class="people-illustration">
+                <div class="person p1"></div>
+                <div class="person p2"></div>
+                <div class="person p3"></div>
+              </div>
+            </div>
+          </div>
+          <div class="feature-row">
+            <div class="feature-card"><strong>পোস্ট করুন</strong></div>
+            <div class="feature-card"><strong>বন্ধু খুঁজুন</strong></div>
+            <div class="feature-card"><strong>মেসেজ করুন</strong></div>
+          </div>
+          <footer class="footer-row"><span>গোপনীয়তা নীতি</span><span>ব্যবহারের শর্ত</span><span>কনটেন্ট নীতিমালা</span></footer>
+        </div>
+      </section>
+
+      <section class="screen-card" data-category="desktop">
+        <div class="screen-header">Desktop Feed</div>
+        <div class="desktop-window web-feed">
+          <nav class="feed-nav">
+            <div class="logo-box small">Booeb</div>
+            <div class="searchbar web-search">খুঁজুন</div>
+            <span class="bell">🔔</span>
+          </nav>
+          <div class="web-body">
+            <aside class="left-menu">
+              <div>হোম</div><div>সার্চ</div><div>মেসেজ</div><div>নোটিফিকেশন</div><div>প্রোফাইল</div><div>সেটিংস</div>
+            </aside>
+            <main class="feed-center">
+              <div class="composer-box">আপনার মনে কী আছে?</div>
+              <div class="stories-row"><span class="story"></span><span class="story"></span><span class="story"></span></div>
+              <div class="post-card feed-post"><div class="post-head"><div class="avatar small"></div><div><strong>ফারহানা</strong><small>@farhana</small></div></div><p>আজকের বিকেলে একটু শান্তি...</p><div class="photo-strip one tall"></div></div>
+              <div class="post-card feed-post"><div class="post-head"><div class="avatar small alt"></div><div><strong>কামরুল</strong><small>@kamrul</small></div></div><p>শহরের ভিড়ে একটু প্রকৃতি দরকার...</p><div class="photo-strip two tall"></div></div>
+            </main>
+            <aside class="right-bar">
+              <div class="trending"><h4>ট্রেন্ডিং</h4><span>#ঢা���া</span><span>#ভ্রমণ</span><span>#ফ্রিডম</span></div>
+              <div class="people-suggest"><h4>যাদের ফলো করতে পারেন</h4><div class="mini-row"><div class="avatar small"></div><strong>সাবিনা</strong></div><div class="mini-row"><div class="avatar small alt"></div><strong>আবির</strong></div><div class="mini-row"><div class="avatar small dark"></div><strong>সুজন</strong></div></div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen-card" data-category="mobile">
+        <div class="screen-header">Menu</div>
+        <div class="phone">
+          <div class="profile-card-top"><div class="avatar large"></div><div><strong>শামীমা</strong><small>প্রোফাইল দেখুন</small></div></div>
+          <div class="menu-grid">
+            <div class="menu-item"><span>👥</span><small>গ্রুপ</small></div>
+            <div class="menu-item"><span>📅</span><small>ইভেন্ট</small></div>
+            <div class="menu-item"><span>🛍️</span><small>মার্কেটপ্লেস</small></div>
+            <div class="menu-item"><span>🎬</span><small>ভিডিও</small></div>
+            <div class="menu-item"><span>📹</span><small>রিলস</small></div>
+            <div class="menu-item"><span>📡</span><small>লাইভ</small></div>
+            <div class="menu-item"><span>🔖</span><small>সংরক্ষিত</small></div>
+            <div class="menu-item"><span>🗓️</span><small>আজকের দিন</small></div>
+            <div class="menu-item"><span>📈</span><small>ইনসাইটস</small></div>
+            <div class="menu-item"><span>🏷️</span><small>পেজ</small></div>
+            <div class="menu-item"><span>📍</span><small>আপনার এলাকা</small></div>
+            <div class="menu-item"><span>⚙️</span><small>সেটিংস</small></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen-card" data-category="mobile">
+        <div class="screen-header">Explore</div>
+        <div class="phone">
+          <div class="searchbar">অনুসন্ধান</div>
+          <div class="chip-row"><span class="chip active">সব</span><span class="chip">ভিডিও</span><span class="chip">ছবি</span><span class="chip">সংবাদ</span></div>
+          <div class="explore-grid">
+            <div class="mini-photo x"></div><div class="mini-photo y"></div><div class="mini-photo z"></div>
+            <div class="mini-photo a"></div><div class="mini-photo b"></div><div class="mini-photo c"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen-card" data-category="mobile">
+        <div class="screen-header">Reels</div>
+        <div class="phone reel-screen">
+          <div class="reel-top"><span>×</span><span>LIVE</span></div>
+          <div class="reel-actions"><div><span>♡</span><small>৩.২K</small></div><div><span>💬</span><small>৮৯০</small></div><div><span>↗</span><small>১.১K</small></div><div><span>🔖</span><small>২৭৮</small></div></div>
+          <div class="reel-bottom"><div class="avatar small"></div><strong>রাইহান</strong><button class="mini-btn">ফলো করুন</button><p>ঢাকার সন্ধ্যায় নতুন ফুড ট্রেন...</p><small>মিউজিক · বাংলা</small></div>
+        </div>
+      </section>
+
+      <section class="screen-card" data-category="mobile">
+        <div class="screen-header">Go Live</div>
+        <div class="phone">
+          <div class="camera-preview"></div>
+          <label>লাইভের শিরোনাম <input value="সন্ধ্যার গল্প" /></label>
+          <div class="audience-btn">সবাই ▾</div>
+          <button class="btn primary big">লাইভ শুরু করুন</button>
+        </div>
+      </section>
+
+      <section class="screen-card" data-category="mobile">
+        <div class="screen-header">Group Page</div>
+        <div class="phone">
+          <div class="cover-photo group-cover"></div>
+          <div class="page-profile pad-20">
+            <h3>ঢাকা ফটোগ্রাফি ক্লাব</h3>
+            <p class="subtle">পাবলিক গ্রুপ</p>
+            <button class="btn primary">যোগ দিন</button>
+            <div class="tabs small-tabs"><span>আলোচনা</span><span>সদস্য</span><span>পরিচিতি</span></div>
+            <div class="post-card compact"><p>সপ্তাহের জন্য নতুন ইভেন্ট সাজানো হচ্ছে...</p></div>
+            <div class="post-card compact"><p>বর্ণময় ঢাকায় বিকেল, ছবি তুলুন...</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen-card" data-category="mobile">
+        <div class="screen-header">Marketplace</div>
+        <div class="phone">
+          <h3>মার্কেটপ্লেস</h3>
+          <div class="searchbar">খুঁজুন</div>
+          <div class="chip-row"><span class="chip active">সব</span><span class="chip">ইলেকট্রনিক্স</span><span class="chip">ফ্যাশন</span></div>
+          <button class="btn btn-outline btn-wide">পণ্য বিক্রি করুন</button>
+          <div class="product-grid">
+            <div class="product-card"><div class="product-image"></div><strong>৳ ১৮,০০০</strong><small>ওয়েবক্যাম</small></div>
+            <div class="product-card"><div class="product-image alt"></div><strong>৳ ২,৮০০</strong><small>স্যুট</small></div>
+            <div class="product-card"><div class="product-image c"></div><strong>৳ ৫,৬০০</strong><small>স্ট্যান্ড লাইট</small></div>
+            <div class="product-card"><div class="product-image d"></div><strong>৳ ২৮,০০০</strong><small>সাইকেল</small></div>
+            <div class="product-card"><div class="product-image e"></div><strong>৳ ৯,৫০০</strong><small>ব্লুটুথ স্পিকার</small></div>
+            <div class="product-card"><div class="product-image f"></div><strong>৳ ১,৯০০</strong><small>সুতা জামা</small></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen-card" data-category="mobile">
+        <div class="screen-header">Product</div>
+        <div class="phone">
+          <div class="product-banner"></div>
+          <div class="product-info">
+            <h4>৳ ১৮,০০০</h4>
+            <h3>Apple AirPods Pro</h3>
+            <p>ঢাকা, বসুন্ধরা</p>
+            <p>ক্লিন কেস, অরিজিনাল, ১ বছর ওয়ারেন্টি।</p>
+            <div class="seller-row"><div class="avatar small"></div><div><strong>শাহরিয়ার</strong><small>ভেরিফাইড</small></div></div>
+            <div class="split-btns"><button class="btn primary">মেসেজ করুন</button><button class="btn btn-outline">সংরক্ষণ</button></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen-card" data-category="mobile">
+        <div class="screen-header">Create Listing</div>
+        <div class="phone">
+          <h3>পণ্য বিক্রি করুন</h3>
+          <div class="upload-box tall">ফটো আপলোড</div>
+          <label>শিরোনাম <input placeholder="শিরোনাম" /></label>
+          <label>দাম <input placeholder="দাম" /></label>
+          <label>ক্যাটাগরি <select><option>ক্যাটাগরি</option></select></label>
+          <label>এলাকা <input placeholder="এলাকা" /></label>
+          <label>বিবরণ <textarea placeholder="বিবরণ"></textarea></label>
+          <button class="btn primary">পোস্ট করুন</button>
+        </div>
+      </section>
+
+      <section class="screen-card" data-category="mobile">
+        <div class="screen-header">Insights</div>
+        <div class="phone">
+          <h3>ইনসাইটস</h3>
+          <div class="chip-row"><span class="chip active">৭ দিন</span><span class="chip">৩০ দিন</span></div>
+          <div class="stats-row vertical"><div class="metric-card small"><span>রিচ</span><strong>৪৮K</strong></div><div class="metric-card small"><span>নতুন অনুসারী</span><strong>২.৪K</strong></div><div class="metric-card small"><span>পোস্ট</span><strong>১১</strong></div></div>
+          <div class="chart-box"><div class="bar b1"></div><div class="bar b2"></div><div class="bar b3"></div><div class="bar b4"></div><div class="bar b5"></div></div>
+          <div class="best-post"><strong>সেরা পোস্ট</strong><div class="mini-photo post-shot"></div></div>
+          <button class="btn primary">পোস্ট বুস্ট করুন</button>
+        </div>
+      </section>
+
+      <section class="screen-card" data-category="mobile">
+        <div class="screen-header">Boost</div>
+        <div class="phone">
+          <h3>পোস্ট বুস্ট</h3>
+          <div class="mini-photo boost-image"></div>
+          <label>টার্গেট এলাকা <select><option>ঢাকা</option></select></label>
+          <label>বাজেট: ৳ ১,২০০ <input type="range" /></label>
+          <label>সময় <select><option>৩ দিন</option></select></label>
+          <div class="pay-row"><span>পেমেন্ট মাধ্যম</span><strong>NPSB</strong></div>
+          <button class="btn primary">NPSB দিয়ে পেমেন্ট করুন</button>
+        </div>
+      </section>
+
+      <section class="screen-card" data-category="mobile">
+        <div class="screen-header">Security</div>
+        <div class="phone">
+          <h3>নিরাপত্তা</h3>
+          <div class="toggle-row"><span>দুই ধাপের যাচাই</span><span class="toggle on"></span></div>
+          <div class="toggle-row"><span>লগইন করা ডিভাইস</span><span class="toggle"></span></div>
+          <div class="toggle-row"><span>লগইন সতর্কতা</span><span class="toggle on"></span></div>
+          <div class="toggle-row"><span>আমার ডেটা ডাউনলোড করুন</span><span>→</span></div>
+        </div>
+      </section>
+
+      <section class="screen-card" data-category="mobile">
+        <div class="screen-header">Appearance</div>
+        <div class="phone">
+          <h3>ডিসপ্লে ও ডেটা</h3>
+          <div class="toggle-row"><span>ডার্ক মোড</span><span class="toggle on"></span></div>
+          <div class="toggle-row"><span>ডেটা সেভার</span><span class="toggle"></span></div>
+          <div class="slider-row"><span>লেখার আকার</span><div class="slider"></div></div>
+          <p class="preview-line">এই লাইনটি দেখুন, লেখার আকার ঠিক আছে কি না।</p>
+        </div>
+      </section>
+
+      <section class="screen-card" data-category="mobile">
+        <div class="screen-header">Follow Requests</div>
+        <div class="phone">
+          <h3>ফলো অনুরোধ</h3>
+          <div class="result-row"><div class="avatar"></div><div><strong>স্বরূপ</strong><small>@swarup</small></div><div class="two-btns"><button class="mini-btn filled">নিশ্চিত করুন</button><button class="mini-btn outline">মুছুন</button></div></div>
+          <div class="result-row"><div class="avatar alt"></div><div><strong>তানভী</strong><small>@tanvi</small></div><div class="two-btns"><button class="mini-btn filled">নিশ্চিত করুন</button><button class="mini-btn outline">মুছুন</button></div></div>
+          <div class="result-row"><div class="avatar another"></div><div><strong>কবির</strong><small>@kabir</small></div><div class="two-btns"><button class="mini-btn filled">নিশ্চিত করুন</button><button class="mini-btn outline">মুছুন</button></div></div>
+          <div class="result-row"><div class="avatar gold"></div><div><strong>রাইসা</strong><small>@raisa</small></div><div class="two-btns"><button class="mini-btn filled">নিশ্চিত করুন</button><button class="mini-btn outline">মুছুন</button></div></div>
+        </div>
+      </section>
+
+      <section class="screen-card" data-category="mobile">
+        <div class="screen-header">Appeal</div>
+        <div class="phone">
+          <h3>আপনার পোস্ট সরানো হয়েছে</h3>
+          <p class="reason">কনটেন্ট নীতিমালা লঙ্ঘন</p>
+          <div class="mini-photo appeal-image"></div>
+          <div class="split-btns"><button class="btn primary">আপিল করুন</button><button class="btn btn-outline">ঠিক আছে</button></div>
+        </div>
+      </section>
+
+      <section class="screen-card" data-category="mobile">
+        <div class="screen-header">Local</div>
+        <div class="phone">
+          <h3>আপনার এলাকা</h3>
+          <div class="dropdowns"><span>বিভাগ: ঢাকা</span><span>জেলা: ঢাকা</span></div>
+          <div class="post-card compact"><div class="post-head"><div class="avatar small"></div><div><strong>চৌধুরী কফি</strong><small>@coffeehouse</small></div></div><p>ঢাকার সেরা কফি পেতে আজই আসুন...</p><div class="photo-strip one"></div></div>
+          <div class="post-card compact"><div class="post-head"><div class="avatar small alt"></div><div><strong>গোলাপি বাজার</strong><small>@market</small></div></div><p>সকাল ৮টায় নতুন সবজি বাজার শুরু...</p><div class="photo-strip two"></div></div>
+          <div class="post-card compact"><div class="post-head"><div class="avatar small dark"></div><div><strong>মসজিদ রোড</strong><small>@place</small></div></div><p>আজকের সাংস্কৃতিক অনুষ্ঠান, প্রতিটি পরিবারকে আমন্ত্রণ...</p><div class="photo-strip three"></div></div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
