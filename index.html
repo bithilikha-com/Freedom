@@ -1,38 +1,162 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f3f6fb">
-  <title>Freedom | Social media UI prototype</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root{font-family:"Noto Sans Bengali","Segoe UI",sans-serif;color:#161d29;background:#f3f6fb;--blue:#1f7cf1;--muted:#617087;--line:#e7edf5;--green:#14945e;--red:#d84444}*{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#eef4ff,#f7f8fb);min-height:100vh}button,input,select,textarea{font:inherit}button{cursor:pointer}.topbar{max-width:1450px;margin:auto;padding:28px 30px 20px;display:flex;align-items:center;justify-content:space-between;gap:20px}.eyebrow{margin:0 0 5px;color:var(--blue);font-weight:800;letter-spacing:.14em;text-transform:uppercase}.topbar h1{margin:0;font-size:clamp(1.6rem,3vw,2.4rem)}.filters{display:flex;gap:8px;flex-wrap:wrap}.filter,.btn,.mini-btn{border:1px solid #dfe7f3;border-radius:999px;background:white;padding:9px 15px;font-weight:700;color:#273449}.filter.active,.btn.primary,.mini-btn.following{background:var(--blue);color:white;border-color:var(--blue)}.screen-grid{max-width:1450px;margin:auto;padding:0 30px 50px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:20px}.screen-card{background:#ffffffa8;border:1px solid #e6ebf2;border-radius:22px;padding:16px;box-shadow:0 12px 30px #18263c14}.screen-header{color:var(--muted);font-weight:800;font-size:.88rem;margin:0 0 10px 3px}.phone,.desktop-window{min-height:470px;border:1px solid var(--line);border-radius:20px;background:#fff;padding:16px;overflow:hidden}.phone h2,.phone h3{margin:5px 0 14px;line-height:1.35}.subtle,small{color:var(--muted)}.row,.post-head,.metrics,.split,.toprow,.toggle-row,.seller{display:flex;align-items:center;gap:10px}.row,.toggle-row,.toprow{justify-content:space-between}.toprow{padding-bottom:12px;border-bottom:1px solid var(--line);margin-bottom:12px}.avatar{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#d9eaff,#8fb8f7);flex:none}.avatar.alt{background:linear-gradient(135deg,#ffe1c9,#f2ae7b)}.avatar.gold{background:linear-gradient(135deg,#ffe7a7,#e9b644)}.post,.panel,.metric-card,.product{background:#f8faff;border:1px solid var(--line);border-radius:15px;padding:12px;margin:10px 0}.post-head{margin-bottom:8px}.post-head div:nth-child(2){flex:1}.post p{margin:8px 0}.photo{height:110px;border-radius:12px;background:linear-gradient(135deg,#d6e5ff,#91b9f4,#f7c9a9);margin:10px 0}.photo.green{background:linear-gradient(135deg,#d9f0d7,#80c99b,#fbe2b5)}.metrics{justify-content:space-between;color:var(--muted);font-size:.82rem;padding-top:5px}.search{background:#f1f5fa;border-radius:999px;padding:10px 14px;color:var(--muted);margin:6px 0 12px}.chips{display:flex;gap:7px;flex-wrap:wrap;margin:10px 0}.chip{padding:6px 11px;background:#eef2f8;border-radius:999px;font-size:.8rem;color:var(--muted)}.chip.active{background:#e5f0ff;color:var(--blue)}.btn{border-radius:11px;padding:10px 14px}.btn.block{width:100%;margin-top:10px}.mini-btn{padding:7px 10px;font-size:.78rem}.person-row{display:flex;align-items:center;gap:10px;padding:10px 2px;border-bottom:1px solid #eef1f5}.person-row .details{flex:1}.person-row strong,.person-row small{display:block}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.tile{min-height:76px;border-radius:12px;background:linear-gradient(135deg,#d9e8ff,#a6c5f3);display:grid;place-items:center;text-align:center;padding:6px;font-size:.82rem;font-weight:700}.form label{display:block;font-size:.82rem;font-weight:700;color:var(--muted);margin:10px 0}.form input,.form select,.form textarea{display:block;width:100%;margin-top:5px;border:1px solid #dfe5ee;border-radius:10px;padding:10px;background:white;color:#1b2635}.form textarea{min-height:65px}.badge{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:#e9b644;color:white;font-weight:800}.status{color:var(--green);font-weight:700}.status.fail{color:var(--red)}.table{width:100%;border-collapse:collapse;font-size:.76rem}.table td,.table th{text-align:left;padding:9px 6px;border-bottom:1px solid var(--line)}.table th{color:var(--muted);background:#f7f9fc}.desktop-window{padding:0;display:flex;min-height:410px}.sidebar{width:145px;background:#f3f6fb;padding:12px;flex:none}.sidebar strong{display:block;margin:4px 0 18px;color:var(--blue)}.side-item{padding:8px 5px;color:var(--muted);font-size:.8rem}.admin-main{padding:14px;min-width:0;flex:1;overflow:auto}.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.metric-card strong{display:block;font-size:1.05rem;margin-top:5px}.hero{padding:28px 18px;text-align:center;background:linear-gradient(140deg,#eef5ff,#fff6e8);border-radius:15px}.hero h2{font-size:1.7rem}.hero p{color:var(--muted)}.footer{margin-top:14px;text-align:center;color:var(--muted);font-size:.75rem}.toggle-row{border:1px solid var(--line);border-radius:11px;padding:12px;margin:9px 0}.switch{width:40px;height:23px;border-radius:99px;background:#cbd5e1;position:relative}.switch:after{content:"";position:absolute;width:17px;height:17px;left:3px;top:3px;border-radius:50%;background:white;transition:.2s}.switch.on{background:var(--blue)}.switch.on:after{left:20px}.notice{font-size:.82rem;color:var(--muted);margin-top:10px}.hidden{display:none!important}@media(max-width:650px){.topbar{padding:20px 16px;align-items:flex-start;flex-direction:column}.screen-grid{padding:0 16px 35px}.desktop-window{min-height:350px}.sidebar{width:110px}.table{font-size:.68rem}.table td,.table th{padding:7px 4px}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Freedom | সোশ্যাল মিডিয়া প্রোটোটাইপ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="script.js" defer></script>
 </head>
 <body>
-  <header class="topbar">
-    <div><p class="eyebrow">Freedom</p><h1>Social media prototype</h1></div>
-    <nav class="filters" aria-label="স্ক্রিন ফিল্টার"><button class="filter active" data-filter="all" aria-pressed="true">সব</button><button class="filter" data-filter="mobile" aria-pressed="false">মোবাইল</button><button class="filter" data-filter="desktop" aria-pressed="false">ডেস্কটপ</button></nav>
-  </header>
-  <main class="screen-grid">
-    <section class="screen-card" data-category="mobile"><h2 class="screen-header">Saved Posts · সংরক্ষিত পোস্ট</h2><div class="phone"><div class="toprow"><span>←</span><strong>সংরক্ষিত পোস্ট</strong><span>🔖</span></div><article class="post"><div class="post-head"><span class="avatar"></span><div><strong>সাদিয়া</strong><small>১২ মিনিট আগে</small></div></div><p>ঢাকায় বিকেলের কফি, নতুন জায়গা খুঁজছি...</p><div class="photo"></div><div class="metrics"><span>♡ ৩৪৮</span><span>💬 ২৪</span><span>↻ ৮</span></div></article><article class="post"><div class="post-head"><span class="avatar alt"></span><div><strong>ইশতিয়াক</strong><small>১ দিন আগে</small></div></div><p>প্রিয় খাবার বেছে নিতে গিয়ে শিখলাম...</p><div class="photo green"></div><div class="metrics"><span>♡ ৫৬০</span><span>💬 ১৮</span><span>↻ ১২</span></div></article></div></section>
-    <section class="screen-card" data-category="mobile"><h2 class="screen-header">Search & Follow · অনুসন্ধান</h2><div class="phone"><div class="search">ঢাকা খুঁজুন</div><div class="chips"><span class="chip">মানুষ</span><span class="chip">পোস্ট</span><span class="chip active">পেজ</span></div><div class="person-row"><span class="avatar"></span><div class="details"><strong>নাহিদ রহমান</strong><small>@nahid</small></div><button class="mini-btn follow">ফলো করুন</button></div><div class="person-row"><span class="avatar alt"></span><div class="details"><strong>সাবিহা আক্তার</strong><small>@sabiha</small></div><button class="mini-btn follow">ফলো করুন</button></div><h3>যাদের ফলো করতে পারেন</h3><div class="person-row"><span class="avatar gold"></span><div class="details"><strong>মৌসুমী</strong><small>@mausumi</small></div><button class="mini-btn follow">ফলো করুন</button></div><button class="btn primary block">শেষ করুন</button></div></section>
-    <section class="screen-card" data-category="mobile"><h2 class="screen-header">Explore · আগ্রহ ও ছবি</h2><div class="phone"><h3>আপনার আগ্রহ বাছুন</h3><p class="subtle">কমপক্ষে ৩টি বাছুন</p><div class="grid3"><span class="tile">সংবাদ</span><span class="tile">খেলা</span><span class="tile">শিক্ষা</span><span class="tile">প্রযুক্তি</span><span class="tile">ভ্রমণ</span><span class="tile">রান্না</span></div><h3 style="margin-top:20px">এক্সপ্লোর</h3><div class="grid3"><span class="tile">ঢাকা</span><span class="tile">ভ্রমণ</span><span class="tile">খাবার</span><span class="tile">সংবাদ</span><span class="tile">ছবি</span><span class="tile">ভিডিও</span></div><button class="btn primary block">পরবর্তী</button></div></section>
-    <section class="screen-card" data-category="mobile"><h2 class="screen-header">Page Profile · পেজ</h2><div class="phone"><div class="photo"></div><span class="badge">✓</span><h3>বাংলা ফুড কর্নার</h3><p class="subtle">রেস্তোরাঁ · অনুসারী ১৮.৫K · পোস্ট ১১২</p><div class="split"><button class="btn primary">ফলো করুন</button><button class="btn">মেসেজ</button></div><div class="chips"><span class="chip active">পোস্ট</span><span class="chip">পরিচিতি</span></div><article class="post"><strong>আজকের স্পেশাল ডিশ</strong><p>সাদা ভাত + ডাবের ঝোল। চলে আসুন!</p></article><h3>পেজ তৈরি করুন</h3><form class="form"><label>পেজের নাম<input placeholder="পেজের নাম"></label><label>ধরন<select><option>রেস্তোরাঁ</option><option>ব্যবসা</option></select></label><label>সংক্ষিপ্ত পরিচয়<textarea placeholder="আপনার পেজ সম্পর্কে"></textarea></label><button class="btn primary" type="button">পেজ তৈরি করুন</button></form></div></section>
-    <section class="screen-card" data-category="mobile"><h2 class="screen-header">Premium & Payments · প্রিমিয়াম</h2><div class="phone"><h3>আমার প্রিমিয়াম</h3><div class="panel"><span class="badge">✓</span><strong> সক্রিয় · বার্ষিক</strong><p>মেয়াদ শেষ: ২০ ডিসেম্বর ২০২৬</p></div><button class="btn primary block">নবায়ন করুন</button><button class="btn block">পেমেন্টের ইতিহাস</button><h3 style="margin-top:20px">পেমেন্ট</h3><div class="person-row"><span>১২ জানু</span><span>বার্ষিক · ৳ ১,৮০০</span><span class="status">সফল</span></div><div class="person-row"><span>৮ জানু</span><span>মাসিক · ৳ ২,১০০</span><span class="status fail">ব্যর্থ</span></div></div></section>
-    <section class="screen-card" data-category="mobile"><h2 class="screen-header">Messages · মেসেজ</h2><div class="phone"><div class="toprow"><span>←</span><strong>নতুন মেসেজ</strong><span>⌕</span></div><div class="search">বন্ধু খুঁজুন</div><div class="person-row"><span class="avatar"></span><div class="details"><strong>ফারহানা</strong><small>@farhana</small></div></div><div class="person-row"><span class="avatar alt"></span><div class="details"><strong>ইমরান</strong><small>@imran</small></div></div><div class="person-row"><span class="avatar gold"></span><div class="details"><strong>রিতা</strong><small>@rita</small></div></div><article class="post"><strong>সুমি আক্তার</strong><div class="photo green"></div><p>হ্যালো! আজকের ছবি দেখে নিন।</p><p style="text-align:right">ভালোই লাগছে! →</p></article><input aria-label="মেসেজ লিখুন" placeholder="মেসেজ লিখুন"></div></section>
-    <section class="screen-card" data-category="mobile"><h2 class="screen-header">Marketplace · মার্কেটপ্লেস</h2><div class="phone"><h3>মার্কেটপ্লেস</h3><div class="search">পণ্য খুঁজুন</div><div class="chips"><span class="chip active">সব</span><span class="chip">ইলেকট্রনিক্স</span><span class="chip">ফ্যাশন</span></div><button class="btn block">পণ্য বিক্রি করুন</button><div class="grid3" style="grid-template-columns:repeat(2,1fr);margin-top:12px"><div class="product"><div class="photo"></div><strong>৳ ১৮,০০০</strong><small>ওয়েবক্যাম · ঢাকা</small></div><div class="product"><div class="photo green"></div><strong>৳ ২,৮০০</strong><small>স্যুট · ঢাকা</small></div><div class="product"><div class="photo green"></div><strong>৳ ৫,৬০০</strong><small>স্ট্যান্ড লাইট</small></div><div class="product"><div class="photo"></div><strong>৳ ২৮,০০০</strong><small>সাইকেল</small></div></div></div></section>
-    <section class="screen-card" data-category="mobile"><h2 class="screen-header">Create Listing · পণ্য যোগ করুন</h2><div class="phone"><h3>পণ্য বিক্রি করুন</h3><form class="form"><label>শিরোনাম<input placeholder="পণ্যের নাম"></label><label>দাম<input type="number" placeholder="দাম"></label><label>ক্যাটাগরি<select><option>ক্যাটাগরি বাছুন</option><option>ইলেকট্রনিক্স</option><option>ফ্যাশন</option></select></label><label>এলাকা<input placeholder="এলাকা"></label><label>বিবরণ<textarea placeholder="পণ্যের বিবরণ"></textarea></label><button type="button" class="btn primary">পোস্ট করুন</button></form></div></section>
-    <section class="screen-card" data-category="mobile"><h2 class="screen-header">Security & Appearance · সেটিংস</h2><div class="phone"><h3>নিরাপত্তা</h3><div class="toggle-row">দুই ধাপের যাচাই <button class="switch on" aria-label="দুই ধাপের যাচাই"></button></div><div class="toggle-row">লগইন সতর্কতা <button class="switch on" aria-label="লগইন সতর্কতা"></button></div><div class="toggle-row">ডেটা সেভার <button class="switch" aria-label="ডেটা সেভার"></button></div><h3 style="margin-top:20px">ডিসপ্লে</h3><div class="toggle-row">ডার্ক মোড <button class="switch" aria-label="ডার্ক মোড"></button></div><p class="notice">এই প্রোটোটাইপে সেটিংসগুলো শুধু দৃশ্যগতভাবে পরিবর্তিত হয়।</p></div></section>
-    <section class="screen-card" data-category="desktop"><h2 class="screen-header">Admin Users · ব্যবহারকারী ব্যবস্থাপনা</h2><div class="desktop-window"><aside class="sidebar"><strong>Freedom Admin</strong><div class="side-item">ড্যাশবোর্ড</div><div class="side-item">ব্যবহারকারী</div><div class="side-item">রিপোর্ট</div><div class="side-item">পেমেন্ট</div></aside><div class="admin-main"><div class="search">ব্যবহারকারী খুঁজুন</div><table class="table"><thead><tr><th>নাম</th><th>ইউজারনেম</th><th>অবস্থা</th><th>অ্যাকশন</th></tr></thead><tbody><tr><td>সামিয়া</td><td>@samiya</td><td class="status">সক্রিয়</td><td><button class="mini-btn">দেখুন</button></td></tr><tr><td>নাঈম</td><td>@naim</td><td class="status">সক্রিয়</td><td><button class="mini-btn">দেখুন</button></td></tr></tbody></table></div></div></section>
-    <section class="screen-card" data-category="desktop"><h2 class="screen-header">Admin Reports · রিপোর্ট</h2><div class="desktop-window"><aside class="sidebar"><strong>Freedom Admin</strong><div class="side-item">ড্যাশবোর্ড</div><div class="side-item">ব্যবহারকারী</div><div class="side-item">রিপোর্ট</div><div class="side-item">পেমেন্ট</div></aside><div class="admin-main"><h3>রিপোর্ট পর্যালোচনা</h3><table class="table"><thead><tr><th>পোস্ট</th><th>কারণ</th><th>রিপোর্টকারী</th><th>অ্যাকশন</th></tr></thead><tbody><tr><td>ছবির পোস্ট</td><td>ভুয়া তথ্য</td><td>@hasan</td><td><button class="mini-btn">সরিয়ে দিন</button></td></tr><tr><td>ভিডিও</td><td>স্প্যাম</td><td>@mita</td><td><button class="mini-btn">বাতিল</button></td></tr></tbody></table></div></div></section>
-    <section class="screen-card" data-category="desktop"><h2 class="screen-header">Admin Payments · পেমেন্ট</h2><div class="desktop-window"><aside class="sidebar"><strong>Freedom Admin</strong><div class="side-item">ড্যাশবোর্ড</div><div class="side-item">ব্যবহারকারী</div><div class="side-item">রিপোর্ট</div><div class="side-item">পেমেন্ট</div></aside><div class="admin-main"><div class="stat-grid"><div class="metric-card"><small>আজকের পেমেন্ট</small><strong>৳ ১,২৮০</strong></div><div class="metric-card"><small>এই মাসে</small><strong>৳ ৪৮,৯৫০</strong></div><div class="metric-card"><small>ব্যর্থ</small><strong>১২</strong></div></div><table class="table"><thead><tr><th>ব্যবহারকারী</th><th>প্ল্যান</th><th>পরিমাণ</th><th>অবস্থা</th></tr></thead><tbody><tr><td>সুজা</td><td>বার্ষিক</td><td>৳ ১,৮০০</td><td class="status">সফল</td></tr><tr><td>তারেক</td><td>মাসিক</td><td>৳ ৮০০</td><td class="status fail">ব্যর্থ</td></tr></tbody></table></div></div></section>
-    <section class="screen-card" data-category="desktop"><h2 class="screen-header">Landing & Feed · ওয়েব</h2><div class="desktop-window" style="display:block;padding:14px"><div class="toprow"><strong style="color:var(--blue)">Freedom</strong><span>আমাদের সম্পর্কে　 যোগাযোগ　 <button class="mini-btn">লগইন</button> <button class="mini-btn following">যোগ দিন</button></span></div><div class="hero"><h2>বাংলাদেশের সবার জন্য</h2><p>আপনার কথা, আপনার ভাষায়</p><button class="btn primary">যোগ দিন</button></div><div class="chips"><span class="chip">পোস্ট করুন</span><span class="chip">বন্ধু খুঁজুন</span><span class="chip">মেসেজ করুন</span></div><div class="post"><strong>হোম ফিড</strong><p>আপনার মনে কী আছে?</p><hr style="border:0;border-top:1px solid var(--line)"><p>ফারহানা · আজকের দিনটি সুন্দর কাটুক! 🌿</p><div class="photo green"></div><div class="metrics"><span>♡ পছন্দ</span><span>💬 মন্তব্য</span><span>↗ শেয়ার</span></div></div><div class="footer">গোপনীয়তা নীতি · ব্যবহারের শর্ত · কনটেন্ট নীতিমালা</div></div></section>
-    <section class="screen-card" data-category="mobile"><h2 class="screen-header">Share, Reels & Go Live</h2><div class="phone"><h3>শেয়ার করুন</h3><div class="panel">↗　আপনার ফিডে শেয়ার</div><div class="panel">✉　মেসেজে পাঠান</div><div class="panel">▣　লিংক কপি করুন</div><h3 style="margin-top:18px">রিলস</h3><div class="photo green" style="height:150px"></div><div class="metrics"><span>♡ ৩.২K</span><span>💬 ৮৯০</span><span>↗ ১.১K</span></div><h3 style="margin-top:18px">লাইভ শুরু করুন</h3><div class="form"><label>লাইভের শিরোনাম<input value="সন্ধ্যার গল্প"></label><button class="btn primary block">লাইভ শুরু করুন</button></div></div></section>
-  </main>
+<header class="topbar">
+  <div><p class="eyebrow">Freedom</p><h1>সোশ্যাল মিডিয়া প্রোটোটাইপ</h1></div>
+  <nav class="filters" aria-label="স্ক্রিন ফিল্টার">
+    <button class="filter active" data-filter="all" aria-pressed="true">সব</button>
+    <button class="filter" data-filter="mobile" aria-pressed="false">মোবাইল</button>
+    <button class="filter" data-filter="desktop" aria-pressed="false">ডেস্কটপ</button>
+  </nav>
+</header>
+
+<main class="screen-grid">
+  <section class="screen-card" data-category="mobile"><h2 class="screen-header">সংরক্ষিত পোস্ট</h2>
+    <div class="phone"><div class="toprow"><span aria-hidden="true">←</span><strong>সংরক্ষিত পোস্ট</strong><span aria-hidden="true">🔖</span></div><div data-list="posts"></div></div></section>
+
+  <section class="screen-card" data-category="mobile"><h2 class="screen-header">অনুসন্ধান ও ফলো</h2>
+    <div class="phone">
+      <input class="search" id="people-search" type="search" placeholder="ঢাকা খুঁজুন" aria-label="মানুষ বা পেজ খুঁজুন">
+      <div class="chips" data-chips="people">
+        <button class="chip active" data-action="chip" data-v="" aria-pressed="true">সব</button>
+        <button class="chip" data-action="chip" data-v="মানুষ" aria-pressed="false">মানুষ</button>
+        <button class="chip" data-action="chip" data-v="পেজ" aria-pressed="false">পেজ</button>
+      </div>
+      <div data-list="people"></div>
+    </div></section>
+
+  <section class="screen-card" data-category="mobile"><h2 class="screen-header">আগ্রহ ও এক্সপ্লোর</h2>
+    <div class="phone"><h3>আপনার আগ্রহ বাছুন</h3><p class="subtle">কমপক্ষে ৩টি বাছুন</p>
+      <div class="grid3" id="interests" data-tiles="সংবাদ,খেলা,শিক্ষা,প্রযুক্তি,ভ্রমণ,রান্না" data-pick></div>
+      <p class="notice" id="interest-note" role="status"></p>
+      <button class="btn primary block" data-action="next">পরবর্তী</button>
+      <h3>এক্সপ্লোর</h3><div class="grid3" data-tiles="ঢাকা,ভ্রমণ,খাবার,সংবাদ,ছবি,ভিডিও"></div>
+    </div></section>
+
+  <section class="screen-card" data-category="mobile"><h2 class="screen-header">পেজ প্রোফাইল ও পেজ তৈরি</h2>
+    <div class="phone"><div class="photo"></div>
+      <h3><span id="page-name">বাংলা ফুড কর্নার</span> <span class="badge" aria-label="যাচাইকৃত">✓</span></h3>
+      <p class="subtle">রেস্তোরাঁ · অনুসারী ১৮.৫ হাজার · পোস্ট ১১২</p>
+      <div class="split"><button class="btn primary" data-action="follow" data-k="profile">ফলো করুন</button><button class="btn" data-action="toast" data-msg="মেসেজ বক্স খোলা হচ্ছে…">মেসেজ</button></div>
+      <h3>পেজ তৈরি করুন</h3>
+      <form class="form" data-form="page" data-ok="পেজ তৈরি হয়েছে" novalidate>
+        <label>পেজের নাম<input name="pname" placeholder="পেজের নাম" required></label>
+        <label>ধরন<select name="ptype" required><option value="">ধরন বাছুন</option><option>রেস্তোরাঁ</option><option>ব্যবসা</option></select></label>
+        <label>সংক্ষিপ্ত পরিচয়<textarea name="pbio" placeholder="আপনার পেজ সম্পর্কে"></textarea></label>
+        <button class="btn primary">পেজ তৈরি করুন</button>
+      </form>
+    </div></section>
+
+  <section class="screen-card" data-category="mobile"><h2 class="screen-header">প্রিমিয়াম ও পেমেন্ট</h2>
+    <div class="phone"><h3>আমার প্রিমিয়াম</h3>
+      <div class="panel"><span class="badge">✓</span> <strong>সক্রিয় · বার্ষিক</strong><p id="expiry">মেয়াদ শেষ: ২০ ডিসেম্বর ২০২৬</p></div>
+      <button class="btn primary block" data-action="renew">নবায়ন করুন</button>
+      <button class="btn block" data-action="history" aria-expanded="false" aria-controls="history">পেমেন্টের ইতিহাস</button>
+      <div id="history" class="hidden"></div>
+    </div></section>
+
+  <section class="screen-card" data-category="mobile"><h2 class="screen-header">মেসেজ</h2>
+    <div class="phone"><div class="toprow"><span aria-hidden="true">←</span><strong>নতুন মেসেজ</strong><span aria-hidden="true">⌕</span></div>
+      <input class="search" id="friend-search" type="search" placeholder="বন্ধু খুঁজুন" aria-label="বন্ধু খুঁজুন">
+      <div data-list="friends"></div>
+      <p class="subtle">চ্যাট: <strong id="chat-to">ফারহানা</strong></p>
+      <div class="chat" id="chat" aria-live="polite"><p class="bubble">হ্যালো! আজকের ছবি দেখে নিন।</p></div>
+      <form class="msg-form" data-form="chat" novalidate><input name="msg" placeholder="মেসেজ লিখুন" aria-label="মেসেজ লিখুন" autocomplete="off" required><button class="btn primary">পাঠান</button></form>
+    </div></section>
+
+  <section class="screen-card" data-category="mobile"><h2 class="screen-header">মার্কেটপ্লেস</h2>
+    <div class="phone"><h3>মার্কেটপ্লেস</h3>
+      <input class="search" id="market-search" type="search" placeholder="পণ্য খুঁজুন" aria-label="পণ্য খুঁজুন">
+      <div class="chips" data-chips="market">
+        <button class="chip active" data-action="chip" data-v="" aria-pressed="true">সব</button>
+        <button class="chip" data-action="chip" data-v="ইলেকট্রনিক্স" aria-pressed="false">ইলেকট্রনিক্স</button>
+        <button class="chip" data-action="chip" data-v="ফ্যাশন" aria-pressed="false">ফ্যাশন</button>
+      </div>
+      <a class="btn block" href="#sell">পণ্য বিক্রি করুন</a>
+      <div class="grid2" data-list="market"></div>
+    </div></section>
+
+  <section class="screen-card" id="sell" data-category="mobile"><h2 class="screen-header">পণ্য যোগ করুন</h2>
+    <div class="phone"><h3>পণ্য বিক্রি করুন</h3>
+      <form class="form" data-form="listing" data-ok="পণ্য মার্কেটপ্লেসে যোগ হয়েছে" novalidate>
+        <label>শিরোনাম<input name="ltitle" placeholder="পণ্যের নাম" required></label>
+        <label>দাম (৳)<input name="lprice" type="number" min="1" placeholder="দাম" required></label>
+        <label>ক্যাটাগরি<select name="lcat" required><option value="">ক্যাটাগরি বাছুন</option><option>ইলেকট্রনিক্স</option><option>ফ্যাশন</option><option>অন্যান্য</option></select></label>
+        <label>এলাকা<input name="larea" placeholder="এলাকা" required></label>
+        <label>বিবরণ<textarea name="ldesc" placeholder="পণ্যের বিবরণ"></textarea></label>
+        <button class="btn primary">পোস্ট করুন</button>
+      </form>
+    </div></section>
+
+  <section class="screen-card" data-category="mobile"><h2 class="screen-header">সেটিংস</h2>
+    <div class="phone">
+      <div class="row"><span class="avatar"></span><div class="details"><strong>সাদিয়া রহমান</strong><small>@sadiarahman · ব্যক্তিগত অ্যাকাউন্ট</small></div></div>
+      <h3>নিরাপত্তা</h3>
+      <div class="toggle-row">দুই ধাপের যাচাই <button class="switch" role="switch" data-action="toggle" data-setting="twofa" aria-label="দুই ধাপের যাচাই"></button></div>
+      <div class="toggle-row">লগইন সতর্কতা <button class="switch" role="switch" data-action="toggle" data-setting="alert" aria-label="লগইন সতর্কতা"></button></div>
+      <div class="toggle-row">ডেটা সেভার <button class="switch" role="switch" data-action="toggle" data-setting="saver" aria-label="ডেটা সেভার"></button></div>
+      <h3>গোপনীয়তা ও নোটিফিকেশন</h3>
+      <div class="form">
+        <label>প্রোফাইল দৃশ্যমানতা<select data-setting="vis"><option>বন্ধুরা</option><option>সর্বজনীন</option><option>শুধু আমি</option></select></label>
+        <label>পোস্ট কারা দেখবে<select data-setting="see"><option>সর্বজনীন</option><option>বন্ধুরা</option><option>শুধু আমি</option></select></label>
+      </div>
+      <div class="toggle-row">নোটিফিকেশন <button class="switch" role="switch" data-action="toggle" data-setting="notif" aria-label="নোটিফিকেশন"></button></div>
+      <h3>ডিসপ্লে</h3>
+      <div class="toggle-row">ডার্ক মোড <button class="switch" role="switch" data-action="toggle" data-setting="dark" aria-label="ডার্ক মোড"></button></div>
+      <button class="btn primary block" data-action="save">সংরক্ষণ করুন</button>
+    </div></section>
+
+  <section class="screen-card" data-category="mobile"><h2 class="screen-header">শেয়ার, রিলস ও লাইভ</h2>
+    <div class="phone"><h3>শেয়ার করুন</h3>
+      <button class="panel" data-action="toast" data-msg="আপনার ফিডে শেয়ার হয়েছে">↗ আপনার ফিডে শেয়ার</button>
+      <button class="panel" data-action="toast" data-msg="মেসেজে পাঠানো হয়েছে">✉ মেসেজে পাঠান</button>
+      <button class="panel" data-action="copy">▣ লিংক কপি করুন</button>
+      <h3>রিলস</h3><div class="photo green" style="height:150px"></div>
+      <div class="metrics"><button class="act" data-action="like" data-n="3200" aria-pressed="false">♡ ৩,২০০</button><span>💬 ৮৯০</span><span>↗ ১,১০০</span></div>
+      <h3>লাইভ শুরু করুন</h3>
+      <div class="form"><label>লাইভের শিরোনাম<input id="live-title" value="সন্ধ্যার গল্প"></label>
+        <button class="btn primary block" data-action="live">লাইভ শুরু করুন</button>
+        <p class="notice" id="live-state" role="status"></p></div>
+    </div></section>
+
+  <section class="screen-card" data-category="desktop"><h2 class="screen-header">অ্যাডমিন · ব্যবহারকারী</h2>
+    <div class="desktop-window"><aside class="sidebar" data-nav="ব্যবহারকারী"></aside>
+      <div class="admin-main"><input class="search" id="user-search" type="search" placeholder="ব্যবহারকারী খুঁজুন" aria-label="ব্যবহারকারী খুঁজুন">
+        <table class="table"><thead><tr><th>নাম</th><th>ইউজারনেম</th><th>অবস্থা</th><th>অ্যাকশন</th></tr></thead><tbody data-list="users"></tbody></table></div></div></section>
+
+  <section class="screen-card" data-category="desktop"><h2 class="screen-header">অ্যাডমিন · রিপোর্ট</h2>
+    <div class="desktop-window"><aside class="sidebar" data-nav="রিপোর্ট"></aside>
+      <div class="admin-main"><h3>রিপোর্ট পর্যালোচনা</h3>
+        <table class="table"><thead><tr><th>পোস্ট</th><th>কারণ</th><th>রিপোর্টকারী</th><th>অ্যাকশন</th></tr></thead><tbody data-list="reports"></tbody></table></div></div></section>
+
+  <section class="screen-card" data-category="desktop"><h2 class="screen-header">অ্যাডমিন · পেমেন্ট</h2>
+    <div class="desktop-window"><aside class="sidebar" data-nav="পেমেন্ট"></aside>
+      <div class="admin-main"><div class="stat-grid" id="pay-stats"></div>
+        <table class="table"><thead><tr><th>ব্যবহারকারী</th><th>প্ল্যান</th><th>পরিমাণ</th><th>অবস্থা</th></tr></thead><tbody data-list="pays"></tbody></table></div></div></section>
+
+  <section class="screen-card" data-category="desktop"><h2 class="screen-header">ল্যান্ডিং ও ফিড</h2>
+    <div class="desktop-window block">
+      <div class="toprow"><strong class="logo">Freedom</strong><span><button class="mini-btn" data-action="toast" data-msg="লগইন পেজ শীঘ্রই আসছে">লগইন</button> <button class="mini-btn primary" data-action="toast" data-msg="নিবন্ধন শীঘ্রই চালু হবে">যোগ দিন</button></span></div>
+      <div class="hero"><h2>বাংলাদেশের সবার জন্য</h2><p>আপনার কথা, আপনার ভাষায়</p></div>
+      <form class="msg-form" data-form="feed" data-ok="পোস্ট প্রকাশিত হয়েছে" novalidate><input name="ftext" placeholder="আপনার মনে কী আছে?" aria-label="নতুন পোস্ট লিখুন" autocomplete="off" required><button class="btn primary">পোস্ট করুন</button></form>
+      <div id="feed"></div>
+      <div class="footer">গোপনীয়তা নীতি · ব্যবহারের শর্ত · কনটেন্ট নীতিমালা</div>
+    </div></section>
+</main>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
   <script>
     (()=>{const filters=document.querySelectorAll('.filter');const cards=document.querySelectorAll('.screen-card');filters.forEach(button=>button.addEventListener('click',()=>{const selected=button.dataset.filter;filters.forEach(item=>{const active=item===button;item.classList.toggle('active',active);item.setAttribute('aria-pressed',String(active))});cards.forEach(card=>card.classList.toggle('hidden',selected!=='all'&&card.dataset.category!==selected))}));document.querySelectorAll('.follow').forEach(button=>button.addEventListener('click',()=>{const following=button.classList.toggle('following');button.textContent=following?'ফলো করছেন':'ফলো করুন'}));document.querySelectorAll('.switch').forEach(button=>button.addEventListener('click',()=>button.classList.toggle('on')))})();
   </script>
