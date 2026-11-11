@@ -88,6 +88,7 @@
     follow(b) { const on = b.classList.toggle('following'); b.textContent = on ? 'ফলো করছেন' : 'ফলো করুন'; if (on) followed.add(b.dataset.k); else followed.delete(b.dataset.k); },
     like(b) { const on = b.classList.toggle('on'); b.setAttribute('aria-pressed', on); b.textContent = '♡ ' + num(+b.dataset.n + (on ? 1 : 0)); },
     toast(b) { toast(b.dataset.msg); },
+    back() { if (history.length > 1) history.back(); else location.hash = '#/home'; },
     copy() { (navigator.clipboard ? navigator.clipboard.writeText(location.href) : Promise.reject()).then(() => toast('লিংক কপি হয়েছে'), () => toast('লিংক কপি করা যায়নি')); },
     pick(b) { const on = b.classList.toggle('on'); b.setAttribute('aria-pressed', on); $('#interest-note').textContent = ''; },
     next() {
@@ -144,7 +145,7 @@
     chat(d) { const p = document.createElement('p'); p.className = 'bubble me'; p.textContent = d.msg.trim(); $('#chat').append(p); p.scrollIntoView({ block: 'nearest' }); },
     feed(d) { $('#feed').insertAdjacentHTML('afterbegin', postHtml({ n: 'আপনি', t: 'এইমাত্র', b: d.ftext.trim(), l: 0, c: 0, s: 0 }, 0)); },
     page(d) { $('#page-name').textContent = d.pname.trim(); },
-    listing(d) { products.unshift({ p: +d.lprice, n: d.ltitle.trim(), c: d.lcat, a: d.larea.trim() }); renderMarket(); }
+    listing(d) { products.unshift({ p: +d.lprice, n: d.ltitle.trim(), c: d.lcat, a: d.larea.trim() }); renderMarket(); location.hash = '#/market'; }
   };
   document.addEventListener('submit', e => {
     const f = e.target, k = f.dataset.form;
@@ -163,15 +164,30 @@
     if (f.dataset.ok) toast(f.dataset.ok);
   });
 
-  /* ---------- screen filter ---------- */
-  $$('.filter').forEach(b => b.addEventListener('click', () => {
-    $$('.filter').forEach(x => { x.classList.toggle('active', x === b); x.setAttribute('aria-pressed', x === b); });
-    $$('.screen-card').forEach(c => c.classList.toggle('hidden', b.dataset.filter !== 'all' && c.dataset.category !== b.dataset.filter));
-  }));
+  /* ---------- routing: one page at a time ---------- */
+  const pages = $$('.screen-card');
+  const mainTabs = ['home', 'search', 'messages', 'market'];
+  const route = () => {
+    const r = location.hash.replace(/^#\/?/, '') || 'home';
+    const id = pages.some(p => p.dataset.page === r) ? r : 'home';
+    pages.forEach(p => p.classList.toggle('active', p.dataset.page === id));
+    const tab = mainTabs.includes(id) ? id : id === 'sell' ? 'market' : 'menu';
+    $$('.tabs a').forEach(a => {
+      const on = a.dataset.tab === tab;
+      a.classList.toggle('on', on);
+      if (on) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
+    });
+    const h = $('.screen-card.active .screen-header');
+    document.title = h.textContent + ' | Freedom';
+    window.scrollTo(0, 0);
+    h.focus({ preventScroll: true });
+  };
+  window.addEventListener('hashchange', route);
 
   /* ---------- static pieces & start ---------- */
   $$('[data-nav]').forEach(a => {
-    a.innerHTML = '<strong>Freedom Admin</strong>' + ['ব্যবহারকারী', 'রিপোর্ট', 'পেমেন্ট'].map(i => `<div class="side-item${i === a.dataset.nav ? ' active' : ''}">${i}</div>`).join('');
+    const AD = { 'ব্যবহারকারী': 'admin-users', 'রিপোর্ট': 'admin-reports', 'পেমেন্ট': 'admin-payments' };
+    a.innerHTML = '<strong>Freedom Admin</strong>' + Object.keys(AD).map(i => `<a class="side-item${i === a.dataset.nav ? ' active' : ''}" href="#/${AD[i]}">${i}</a>`).join('');
   });
   $$('[data-tiles]').forEach(g => {
     const pick = g.hasAttribute('data-pick');
@@ -181,4 +197,5 @@
   renderPosts(); renderPeople(); renderFriends(); renderMarket(); renderMyPay();
   renderUsers(); renderReports(); renderPays();
   set('#feed', feedPosts.map(postHtml).join(''));
+  route();
 })();
