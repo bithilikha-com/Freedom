@@ -23,7 +23,25 @@
 </header>
 
 <main class="screen-grid">
-  <section class="screen-card" data-page="menu" data-category="mobile"><h2 class="screen-header" tabindex="-1">মেনু</h2>
+  <section class="screen-card" data-page=  <section class="screen-card" data-page="login" data-category="mobile"><h2 class="screen-header" tabindex="-1">লগইন</h2>
+    <div class="phone auth">
+      <p class="auth-logo">Freedom</p>
+      <p class="subtle">আপনার কথা, আপনার ভাষায়</p>
+      <form class="form" data-auth="login" novalidate>
+        <label>ইউজারনেম বা ইমেইল<input name="lname" autocomplete="username" required></label>
+        <label>পাসওয়ার্ড <button type="button" class="link-btn" data-action="showpw" aria-pressed="false">👁 দেখুন</button><input id="login-pass" name="lpass" type="password" autocomplete="current-password" required></label>
+        <button class="btn primary block">লগইন</button>
+      </form>
+    </div></section>
+
+  <section class="screen-card" data-page="logout" data-category="mobile"><h2 class="screen-header" tabindex="-1">লগআউট</h2>
+    <div class="phone auth">
+      <p class="auth-logo" aria-hidden="true">🚪</p>
+      <h3><span data-user></span>, লগআউট করতে চান?</h3>
+      <p class="subtle">লগআউট করলে আবার লগইন করতে হবে।</p>
+      <button class="btn primary block" data-action="logout">হ্যাঁ, লগআউট করুন</button>
+      <button class="btn block" data-action="back">না, ফিরে যান</button>
+    </div></section>"menu" data-category="mobile"><h2 class="screen-header" tabindex="-1">মেনু</h2>
     <div class="phone"><h3>আপনার জন্য</h3>
       <a class="panel" href="#/saved">🔖 সংরক্ষিত পোস্ট</a>
       <a class="panel" href="#/interests">✨ আগ্রহ ও এক্সপ্লোর</a>
