@@ -11,20 +11,37 @@
 <script src="script.js" defer></script>
 </head>
 <body>
-<header class="topbar">
-  <div><p class="eyebrow">Freedom</p><h1>সোশ্যাল মিডিয়া প্রোটোটাইপ</h1></div>
-  <nav class="filters" aria-label="স্ক্রিন ফিল্টার">
-    <button class="filter active" data-filter="all" aria-pressed="true">সব</button>
-    <button class="filter" data-filter="mobile" aria-pressed="false">মোবাইল</button>
-    <button class="filter" data-filter="desktop" aria-pressed="false">ডেস্কটপ</button>
+<header class="nav">
+  <a class="brand" href="#/home" aria-label="Freedom হোম">Freedom</a>
+  <nav class="tabs" aria-label="প্রধান মেনু">
+    <a href="#/home" data-tab="home"><span aria-hidden="true">🏠</span>হোম</a>
+    <a href="#/search" data-tab="search"><span aria-hidden="true">🔍</span>অনুসন্ধান</a>
+    <a href="#/messages" data-tab="messages"><span aria-hidden="true">💬</span>মেসেজ</a>
+    <a href="#/market" data-tab="market"><span aria-hidden="true">🛍️</span>মার্কেটপ্লেস</a>
+    <a href="#/menu" data-tab="menu"><span aria-hidden="true">☰</span>মেনু</a>
   </nav>
 </header>
 
 <main class="screen-grid">
-  <section class="screen-card" data-category="mobile"><h2 class="screen-header">সংরক্ষিত পোস্ট</h2>
-    <div class="phone"><div class="toprow"><span aria-hidden="true">←</span><strong>সংরক্ষিত পোস্ট</strong><span aria-hidden="true">🔖</span></div><div data-list="posts"></div></div></section>
+  <section class="screen-card" data-page="menu" data-category="mobile"><h2 class="screen-header" tabindex="-1">মেনু</h2>
+    <div class="phone"><h3>আপনার জন্য</h3>
+      <a class="panel" href="#/saved">🔖 সংরক্ষিত পোস্ট</a>
+      <a class="panel" href="#/interests">✨ আগ্রহ ও এক্সপ্লোর</a>
+      <a class="panel" href="#/share">🎬 শেয়ার, রিলস ও লাইভ</a>
+      <a class="panel" href="#/page">🏳️ পেজ</a>
+      <h3>অ্যাকাউন্ট</h3>
+      <a class="panel" href="#/premium">⭐ প্রিমিয়াম ও পেমেন্ট</a>
+      <a class="panel" href="#/settings">⚙️ সেটিংস</a>
+      <h3>অ্যাডমিন</h3>
+      <a class="panel" href="#/admin-users">👥 ব্যবহারকারী</a>
+      <a class="panel" href="#/admin-reports">🚩 রিপোর্ট</a>
+      <a class="panel" href="#/admin-payments">💳 পেমেন্ট</a>
+    </div></section>
 
-  <section class="screen-card" data-category="mobile"><h2 class="screen-header">অনুসন্ধান ও ফলো</h2>
+  <section class="screen-card" data-page="saved" data-category="mobile"><h2 class="screen-header" tabindex="-1">সংরক্ষিত পোস্ট</h2>
+    <div class="phone"><div class="toprow"><button class="back" data-action="back" aria-label="পেছনে যান">←</button><strong>সংরক্ষিত পোস্ট</strong><span aria-hidden="true">🔖</span></div><div data-list="posts"></div></div></section>
+
+  <section class="screen-card" data-page="search" data-category="mobile"><h2 class="screen-header" tabindex="-1">অনুসন্ধান ও ফলো</h2>
     <div class="phone">
       <input class="search" id="people-search" type="search" placeholder="ঢাকা খুঁজুন" aria-label="মানুষ বা পেজ খুঁজুন">
       <div class="chips" data-chips="people">
@@ -35,7 +52,7 @@
       <div data-list="people"></div>
     </div></section>
 
-  <section class="screen-card" data-category="mobile"><h2 class="screen-header">আগ্রহ ও এক্সপ্লোর</h2>
+  <section class="screen-card" data-page="interests" data-category="mobile"><h2 class="screen-header" tabindex="-1">আগ্রহ ও এক্সপ্লোর</h2>
     <div class="phone"><h3>আপনার আগ্রহ বাছুন</h3><p class="subtle">কমপক্ষে ৩টি বাছুন</p>
       <div class="grid3" id="interests" data-tiles="সংবাদ,খেলা,শিক্ষা,প্রযুক্তি,ভ্রমণ,রান্না" data-pick></div>
       <p class="notice" id="interest-note" role="status"></p>
@@ -43,7 +60,7 @@
       <h3>এক্সপ্লোর</h3><div class="grid3" data-tiles="ঢাকা,ভ্রমণ,খাবার,সংবাদ,ছবি,ভিডিও"></div>
     </div></section>
 
-  <section class="screen-card" data-category="mobile"><h2 class="screen-header">পেজ প্রোফাইল ও পেজ তৈরি</h2>
+  <section class="screen-card" data-page="page" data-category="mobile"><h2 class="screen-header" tabindex="-1">পেজ প্রোফাইল ও পেজ তৈরি</h2>
     <div class="phone"><div class="photo"></div>
       <h3><span id="page-name">বাংলা ফুড কর্নার</span> <span class="badge" aria-label="যাচাইকৃত">✓</span></h3>
       <p class="subtle">রেস্তোরাঁ · অনুসারী ১৮.৫ হাজার · পোস্ট ১১২</p>
@@ -57,7 +74,7 @@
       </form>
     </div></section>
 
-  <section class="screen-card" data-category="mobile"><h2 class="screen-header">প্রিমিয়াম ও পেমেন্ট</h2>
+  <section class="screen-card" data-page="premium" data-category="mobile"><h2 class="screen-header" tabindex="-1">প্রিমিয়াম ও পেমেন্ট</h2>
     <div class="phone"><h3>আমার প্রিমিয়াম</h3>
       <div class="panel"><span class="badge">✓</span> <strong>সক্রিয় · বার্ষিক</strong><p id="expiry">মেয়াদ শেষ: ২০ ডিসেম্বর ২০২৬</p></div>
       <button class="btn primary block" data-action="renew">নবায়ন করুন</button>
@@ -65,8 +82,8 @@
       <div id="history" class="hidden"></div>
     </div></section>
 
-  <section class="screen-card" data-category="mobile"><h2 class="screen-header">মেসেজ</h2>
-    <div class="phone"><div class="toprow"><span aria-hidden="true">←</span><strong>নতুন মেসেজ</strong><span aria-hidden="true">⌕</span></div>
+  <section class="screen-card" data-page="messages" data-category="mobile"><h2 class="screen-header" tabindex="-1">মেসেজ</h2>
+    <div class="phone"><div class="toprow"><button class="back" data-action="back" aria-label="পেছনে যান">←</button><strong>নতুন মেসেজ</strong><span aria-hidden="true">⌕</span></div>
       <input class="search" id="friend-search" type="search" placeholder="বন্ধু খুঁজুন" aria-label="বন্ধু খুঁজুন">
       <div data-list="friends"></div>
       <p class="subtle">চ্যাট: <strong id="chat-to">ফারহানা</strong></p>
@@ -74,7 +91,7 @@
       <form class="msg-form" data-form="chat" novalidate><input name="msg" placeholder="মেসেজ লিখুন" aria-label="মেসেজ লিখুন" autocomplete="off" required><button class="btn primary">পাঠান</button></form>
     </div></section>
 
-  <section class="screen-card" data-category="mobile"><h2 class="screen-header">মার্কেটপ্লেস</h2>
+  <section class="screen-card" data-page="market" data-category="mobile"><h2 class="screen-header" tabindex="-1">মার্কেটপ্লেস</h2>
     <div class="phone"><h3>মার্কেটপ্লেস</h3>
       <input class="search" id="market-search" type="search" placeholder="পণ্য খুঁজুন" aria-label="পণ্য খুঁজুন">
       <div class="chips" data-chips="market">
@@ -82,11 +99,11 @@
         <button class="chip" data-action="chip" data-v="ইলেকট্রনিক্স" aria-pressed="false">ইলেকট্রনিক্স</button>
         <button class="chip" data-action="chip" data-v="ফ্যাশন" aria-pressed="false">ফ্যাশন</button>
       </div>
-      <a class="btn block" href="#sell">পণ্য বিক্রি করুন</a>
+      <a class="btn block" href="#/sell">পণ্য বিক্রি করুন</a>
       <div class="grid2" data-list="market"></div>
     </div></section>
 
-  <section class="screen-card" id="sell" data-category="mobile"><h2 class="screen-header">পণ্য যোগ করুন</h2>
+  <section class="screen-card" data-page="sell" data-category="mobile"><h2 class="screen-header" tabindex="-1">পণ্য যোগ করুন</h2>
     <div class="phone"><h3>পণ্য বিক্রি করুন</h3>
       <form class="form" data-form="listing" data-ok="পণ্য মার্কেটপ্লেসে যোগ হয়েছে" novalidate>
         <label>শিরোনাম<input name="ltitle" placeholder="পণ্যের নাম" required></label>
@@ -98,7 +115,7 @@
       </form>
     </div></section>
 
-  <section class="screen-card" data-category="mobile"><h2 class="screen-header">সেটিংস</h2>
+  <section class="screen-card" data-page="settings" data-category="mobile"><h2 class="screen-header" tabindex="-1">সেটিংস</h2>
     <div class="phone">
       <div class="row"><span class="avatar"></span><div class="details"><strong>সাদিয়া রহমান</strong><small>@sadiarahman · ব্যক্তিগত অ্যাকাউন্ট</small></div></div>
       <h3>নিরাপত্তা</h3>
@@ -116,7 +133,7 @@
       <button class="btn primary block" data-action="save">সংরক্ষণ করুন</button>
     </div></section>
 
-  <section class="screen-card" data-category="mobile"><h2 class="screen-header">শেয়ার, রিলস ও লাইভ</h2>
+  <section class="screen-card" data-page="share" data-category="mobile"><h2 class="screen-header" tabindex="-1">শেয়ার, রিলস ও লাইভ</h2>
     <div class="phone"><h3>শেয়ার করুন</h3>
       <button class="panel" data-action="toast" data-msg="আপনার ফিডে শেয়ার হয়েছে">↗ আপনার ফিডে শেয়ার</button>
       <button class="panel" data-action="toast" data-msg="মেসেজে পাঠানো হয়েছে">✉ মেসেজে পাঠান</button>
@@ -129,25 +146,23 @@
         <p class="notice" id="live-state" role="status"></p></div>
     </div></section>
 
-  <section class="screen-card" data-category="desktop"><h2 class="screen-header">অ্যাডমিন · ব্যবহারকারী</h2>
+  <section class="screen-card" data-page="admin-users" data-category="desktop"><h2 class="screen-header" tabindex="-1">অ্যাডমিন · ব্যবহারকারী</h2>
     <div class="desktop-window"><aside class="sidebar" data-nav="ব্যবহারকারী"></aside>
       <div class="admin-main"><input class="search" id="user-search" type="search" placeholder="ব্যবহারকারী খুঁজুন" aria-label="ব্যবহারকারী খুঁজুন">
         <table class="table"><thead><tr><th>নাম</th><th>ইউজারনেম</th><th>অবস্থা</th><th>অ্যাকশন</th></tr></thead><tbody data-list="users"></tbody></table></div></div></section>
 
-  <section class="screen-card" data-category="desktop"><h2 class="screen-header">অ্যাডমিন · রিপোর্ট</h2>
+  <section class="screen-card" data-page="admin-reports" data-category="desktop"><h2 class="screen-header" tabindex="-1">অ্যাডমিন · রিপোর্ট</h2>
     <div class="desktop-window"><aside class="sidebar" data-nav="রিপোর্ট"></aside>
       <div class="admin-main"><h3>রিপোর্ট পর্যালোচনা</h3>
         <table class="table"><thead><tr><th>পোস্ট</th><th>কারণ</th><th>রিপোর্টকারী</th><th>অ্যাকশন</th></tr></thead><tbody data-list="reports"></tbody></table></div></div></section>
 
-  <section class="screen-card" data-category="desktop"><h2 class="screen-header">অ্যাডমিন · পেমেন্ট</h2>
+  <section class="screen-card" data-page="admin-payments" data-category="desktop"><h2 class="screen-header" tabindex="-1">অ্যাডমিন · পেমেন্ট</h2>
     <div class="desktop-window"><aside class="sidebar" data-nav="পেমেন্ট"></aside>
       <div class="admin-main"><div class="stat-grid" id="pay-stats"></div>
         <table class="table"><thead><tr><th>ব্যবহারকারী</th><th>প্ল্যান</th><th>পরিমাণ</th><th>অবস্থা</th></tr></thead><tbody data-list="pays"></tbody></table></div></div></section>
 
-  <section class="screen-card" data-category="desktop"><h2 class="screen-header">ল্যান্ডিং ও ফিড</h2>
+  <section class="screen-card" data-page="home" data-category="mobile"><h2 class="screen-header" tabindex="-1">হোম</h2>
     <div class="desktop-window block">
-      <div class="toprow"><strong class="logo">Freedom</strong><span><button class="mini-btn" data-action="toast" data-msg="লগইন পেজ শীঘ্রই আসছে">লগইন</button> <button class="mini-btn primary" data-action="toast" data-msg="নিবন্ধন শীঘ্রই চালু হবে">যোগ দিন</button></span></div>
-      <div class="hero"><h2>বাংলাদেশের সবার জন্য</h2><p>আপনার কথা, আপনার ভাষায়</p></div>
       <form class="msg-form" data-form="feed" data-ok="পোস্ট প্রকাশিত হয়েছে" novalidate><input name="ftext" placeholder="আপনার মনে কী আছে?" aria-label="নতুন পোস্ট লিখুন" autocomplete="off" required><button class="btn primary">পোস্ট করুন</button></form>
       <div id="feed"></div>
       <div class="footer">গোপনীয়তা নীতি · ব্যবহারের শর্ত · কনটেন্ট নীতিমালা</div>
@@ -155,10 +170,5 @@
 </main>
 
 <div id="toast" class="toast" role="status" aria-live="polite"></div>
-</body>
-</html>
-  <script>
-    (()=>{const filters=document.querySelectorAll('.filter');const cards=document.querySelectorAll('.screen-card');filters.forEach(button=>button.addEventListener('click',()=>{const selected=button.dataset.filter;filters.forEach(item=>{const active=item===button;item.classList.toggle('active',active);item.setAttribute('aria-pressed',String(active))});cards.forEach(card=>card.classList.toggle('hidden',selected!=='all'&&card.dataset.category!==selected))}));document.querySelectorAll('.follow').forEach(button=>button.addEventListener('click',()=>{const following=button.classList.toggle('following');button.textContent=following?'ফলো করছেন':'ফলো করুন'}));document.querySelectorAll('.switch').forEach(button=>button.addEventListener('click',()=>button.classList.toggle('on')))})();
-  </script>
 </body>
 </html>
