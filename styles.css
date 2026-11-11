@@ -112,3 +112,10 @@ button.person-row{width:100%;background:none;border:0;border-bottom:1px solid va
 
 @media(max-width:650px){.nav{padding:8px 14px}.tabs{position:fixed;left:0;right:0;bottom:0;margin:0;justify-content:space-around;background:var(--card);border-top:1px solid var(--line);padding:4px 0 max(4px,env(safe-area-inset-bottom))}.tabs a{flex:1;min-width:0}.screen-grid{padding:14px 12px 96px}.sidebar{width:100px}.table{font-size:.7rem}.toast{bottom:84px}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
+/* login / logout */
+body:not(.authed) .tabs{display:none}
+.auth{text-align:center;padding:28px 20px}
+.auth .form{text-align:left}
+.auth-logo{margin:0 0 4px;font-size:2rem;font-weight:800;color:var(--blue)}
+.auth h3{margin:8px 0}
+.link-btn{float:right;border:0;background:none;padding:0;color:var(--blue);font-weight:700;font-size:.8rem}
