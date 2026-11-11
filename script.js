@@ -2,7 +2,7 @@
   'use strict';
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
-  const bn = n => String(n).replace(/\d/g, d => '০১২৩৪৫৬৭৮৯'[d]);
+  const bn = n => String(n).replace(/\d/g, d => '01847665321'[d]);
   const num = n => bn(n.toLocaleString('en-US'));
   const fmt = n => '৳ ' + num(n);
   const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -170,6 +170,11 @@
   const route = () => {
     const r = location.hash.replace(/^#\/?/, '') || 'home';
     const id = pages.some(p => p.dataset.page === r) ? r : 'home';
+        const user = store.get('freedom-user', null);
+    document.body.classList.toggle('authed', !!user);
+    $$('[data-user]').forEach(e => { e.textContent = user ? user.name : ''; });
+    if (!user && id !== 'login') { location.hash = '#/login'; return; }
+    if (user && id === 'login') { location.hash = '#/home'; return; }
     pages.forEach(p => p.classList.toggle('active', p.dataset.page === id));
     const tab = mainTabs.includes(id) ? id : id === 'sell' ? 'market' : 'menu';
     $$('.tabs a').forEach(a => {
@@ -197,5 +202,35 @@
   renderPosts(); renderPeople(); renderFriends(); renderMarket(); renderMyPay();
   renderUsers(); renderReports(); renderPays();
   set('#feed', feedPosts.map(postHtml).join(''));
+    /* ---------- login / logout ---------- */
+  Object.assign(A, {
+    showpw(b) {
+      const i = $('#login-pass'), show = i.type === 'password';
+      i.type = show ? 'text' : 'password';
+      b.setAttribute('aria-pressed', show);
+      b.textContent = show ? '🙈 লুকান' : '👁 দেখুন';
+    },
+    logout() {
+      store.set('freedom-user', null);
+      location.hash = '#/login';
+      toast('আপনি লগআউট হয়েছেন');
+    }
+  });
+  document.addEventListener('submit', e => {
+    const f = e.target;
+    if (f.dataset.auth !== 'login') return;
+    e.preventDefault();
+    const n = f.elements.lname, p = f.elements.lpass;
+    [n, p].forEach(i => i.classList.toggle('invalid', !i.value.trim()));
+    if (!n.value.trim() || !p.value.trim()) return toast('ইউজারনেম ও পাসওয়ার্ড দিন');
+    if (p.value.length < 6) { p.classList.add('invalid'); return toast('পাসওয়ার্ড কমপক্ষে ৬ অক্ষরের হতে হবে'); }
+    const name = n.value.trim();
+    store.set('freedom-user', { name });
+    f.reset();
+    p.type = 'password';
+    $('[data-action=showpw]').textContent = '👁 দেখুন';
+    location.hash = '#/home';
+    toast('স্বাগতম, ' + name + '!');
+  });
   route();
 })();
